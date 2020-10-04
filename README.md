@@ -20,8 +20,8 @@
 #### The following exercise can be found in the folder *Thursday*
 * **Implementing frontend to last weeks exercise:**
     - *REST_PersonsDTO:*
-      - Backend made last week, deployed via maven (on tomcat)
+      - Backend made last week, deployed via maven (/on tomcat)
     - (Deployed on droplet/nginx server) *frontend/person:*
-      - Frontend made this week. Status of completion: Very close to 100%. I've implemented everything *BUT* I clearly didn't read the instructions thoroughly enough since I, instead of the delete/edit links, just added more buttons. Still works though although the edit function isn't that useful (you have to fill out all fields otherwise it just returns them as empty). I'm guessing it's because I never got the time to add the MissingInputException last week.
+      - Frontend made this week. **Status of completion:** Very close to 100%. I've implemented everything *BUT* I clearly didn't read the instructions thoroughly enough since I, instead of the delete/edit links, just added more buttons. Still works though although the edit function isn't that useful (you have to fill out all fields otherwise it just returns them as empty). I'm guessing it's because I never got the time to add the MissingInputException last week.
 
 #### This week has been pretty stressful and chaotic (thanks to personal life) and I struggled quite a bit with the exercises; hence I haven't even attempted the exam preparation exercises. I'm glad I managed to finish most of the other exercises though - I *did* learn some new things. I chose to focus on those instead of stressing myself out even more, trying to complete everything.
