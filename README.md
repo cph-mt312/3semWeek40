@@ -18,7 +18,7 @@
       - Status of completion: I'd say it's very close to being done. I'm able to show all users, show a single user (searching by id), add a new user + delete them. I didn't get the edit to work in this particular exercise.
 ## Thursday:
 #### The following exercise can be found in the folder *Thursday*
-* **Implementing frontend to last weeks exercise:**
+* **Implementing frontend to last week's exercise:**
     - *REST_PersonsDTO:*
       - Backend made last week, deployed via maven (/on tomcat)
     - (Deployed on droplet/nginx server) *frontend/person:*
