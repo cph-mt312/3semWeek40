@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Webpack/Babel-demo</title>
+</head>
+
+<body>
+  <div id="content" class="content">
+    <h3>List of all persons</h3>
+    <div style="min-height: 200px;">
+      <table class="table" style="width: 90%">
+        <thead>
+          <tr>
+            <td>ID</td>
+            <td>First Name</td>
+            <td>Last name</td>
+            <td>Phone</td>
+            <td>Street</td>
+            <td>Zip</td>
+            <td>City</td>
+          </tr>
+        </thead>
+        <tbody id="tbody"></tbody>
+      </table>
+    </div>
+    <button type="button" id="reload" class="btn btn-secondary">Reload Data</button>
+    <button type="button" id="addPerson" class="btn btn-dark" data-toggle="modal" data-target="#addModal">
+      Add New Person
+    </button>
+    <button type="button" id="editPerson" class="btn btn-dark" data-toggle="modal" data-target="#editModal">
+      Edit Person
+    </button>
+    <button type="button" id="deletePerson" class="btn btn-danger" data-toggle="modal" data-target="#deleteModal">
+      Delete Person
+    </button>
+    <div id="error" class="alert alert-danger" role="alert"
+      style="width: 50%; margin-top: 10px; background-color: lightgray; border: none; color: red;"></div>
+
+    <!-- Modal for add person -->
+    <div class="modal fade" id="addModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div id="header" class="modal-header">
+
+          </div>
+          <div class="modal-body">
+            <input type="hidden" id="id">
+            <div class="form-group">
+              <label for="fname">First Name</label>
+              <input type="text" class="form-control" name="fname" id="fname">
+            </div>
+            <div class="form-group">
+              <label for="lname">Last Name</label>
+              <input type="text" class="form-control" name="lname" id="lname">
+            </div>
+            <div class="form-group">
+              <label for="phone">Phone</label>
+              <input type="text" class="form-control" name="phone" id="phone">
+            </div>
+            <div class="form-group">
+              <label for="street">Street</label>
+              <input type="text" class="form-control" name="street" id="street">
+            </div>
+            <div class="form-group">
+              <label for="zip">ZIP Code</label>
+              <input type="text" class="form-control" name="zip" id="zip">
+            </div>
+            <div class="form-group">
+              <label for="city">City</label>
+              <input type="text" class="form-control" name="city" id="city">
+            </div>
+
+            <!-- Allow form submission with keyboard without duplicating the dialog button -->
+            <input type="submit" tabindex="-1" style="position:absolute; top:-1000px">
+
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-light" data-dismiss="modal">Cancel</button>
+            <button type="button" id="savebtn" class="btn btn-success" data-dismiss="modal">Save changes</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal for delete person -->
+    <div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div id="header" class="modal-header">
+
+          </div>
+          <div class="modal-body">
+            <div class="form-group">
+              <label for="id">ID</label>
+              <input type="text" class="form-control" name="id" id="deleteId">
+            </div>
+
+            <!-- Allow form submission with keyboard without duplicating the dialog button -->
+            <input type="submit" tabindex="-1" style="position:absolute; top:-1000px">
+
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-light" data-dismiss="modal">Cancel</button>
+            <button type="button" id="deletebtn" class="btn btn-danger" data-dismiss="modal">Delete</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal for edit user -->
+    <div class="modal fade" id="editModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div id="header" class="modal-header">
+
+          </div>
+          <div class="modal-body">
+            <div class="form-group">
+              <label for="fname">ID</label>
+              <input type="text" class="form-control" name="id" id="editId">
+            </div>
+            <div class="form-group">
+              <label for="fname">First Name</label>
+              <input type="text" class="form-control" name="fname" id="editfname">
+            </div>
+            <div class="form-group">
+              <label for="lname">Last Name</label>
+              <input type="text" class="form-control" name="lname" id="editlname">
+            </div>
+            <div class="form-group">
+              <label for="phone">Phone</label>
+              <input type="text" class="form-control" name="phone" id="editphone">
+            </div>
+            <div class="form-group">
+              <label for="street">Street</label>
+              <input type="text" class="form-control" name="street" id="editstreet">
+            </div>
+            <div class="form-group">
+              <label for="zip">ZIP Code</label>
+              <input type="text" class="form-control" name="zip" id="editzip">
+            </div>
+            <div class="form-group">
+              <label for="city">City</label>
+              <input type="text" class="form-control" name="city" id="editcity">
+            </div>
+
+            <!-- Allow form submission with keyboard without duplicating the dialog button -->
+            <input type="submit" tabindex="-1" style="position:absolute; top:-1000px">
+
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-light" data-dismiss="modal">Cancel</button>
+            <button type="button" id="editbtn" class="btn btn-success" data-dismiss="modal">Save changes</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>
