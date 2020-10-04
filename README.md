@@ -1,5 +1,10 @@
 # Week40
 
+* Link to deployed frontend (person client):
+  - https://orc-dungeon.com/
+* Link to REST API (person backend):
+  - https://orc-dungeon.com/tomcat/person/api/person/all
+
 ## Tuesday:
 #### The following exercise can be found in the folder *Tuesday*
 * **callbacksAndMore:**
